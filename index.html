@@ -273,7 +273,7 @@
         </section>
 
 
-        <!-- 5. Location & Contact Section (Minimalist Layout + New Inquiry Form) -->
+        <!-- 5. Location & Contact Section (Minimalist Layout + Inquiry Form) -->
         <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 bg-kultura-bg">
             <div class="max-w-7xl mx-auto">
                 <h2 class="text-3xl font-light text-gray-900 mb-12 text-center kultura-title">
@@ -282,19 +282,23 @@
                 
                 <!-- 2-Column: Map and Contact Details -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                    <!-- Map View (Clickable link to Google Maps) -->
-                    <a href="https://www.google.com/maps/search/?api=1&query=Capitol+Dr,+Pili,+Philippines" target="_blank" class="block w-full h-96 rounded-lg overflow-hidden shadow-xl border border-gray-200 hover:opacity-95 transition duration-300 relative">
-                        <!-- Placeholder image that looks like a map -->
-                        <img 
-                            src="https://placehold.co/800x400/CCCCCC/4C3322?text=Click+to+View+Map+of+Pili+Showroom" 
-                            alt="Map location of Pili & Sili Showroom" 
-                            class="w-full h-full object-cover"
-                            onerror="this.onerror=null;this.src='https://placehold.co/800x400/CCCCCC/4C3322?text=Click+to+View+Map+of+Pili+Showroom';"
-                        >
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/10 transition duration-300">
-                            <p class="text-white text-xl font-bold p-3 rounded-full bg-kultura-red/80 hover:bg-kultura-red transition duration-300 shadow-lg">View Location on Map</p>
-                        </div>
-                    </a>
+                    <!-- Interactive Map View (Google Maps Embed with Pinned Location) -->
+                    <div class="w-full h-96 rounded-lg overflow-hidden shadow-xl border border-gray-200">
+                        <!-- 
+                            The embedded map now uses coordinates (13.5670, 123.2790) near Capitol Dr 
+                            in Pili, Camarines Sur, to ensure a visible marker/pin for the shop location. 
+                        -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3878.887268393525!2d123.27555355!3d13.56740665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1e9444f9f604b%3A0x6a05e0c6574f85e!2sPili%2C%20Camarines%20Sur!5e0!3m2!1sen!2sph!4v1701391000000!5m2!1sen!2sph&q=Pili%2C+Camarines+Sur&z=15&marker=13.5670%2C123.2790" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Interactive Map of Pili & Sili Showroom Pinned Location"
+                        ></iframe>
+                    </div>
 
                     <!-- Contact Details -->
                     <div class="space-y-6 flex flex-col justify-center">
