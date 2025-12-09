@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pili & Sili Souvenirs Unlimited - Naga City, Cam Sur</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and define custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // PRIMARY ACCENTS
+                        'kultura-red': '#A82A2A', // Deeper, more sophisticated red
+                        'kultura-brown': '#4C3322', // Rich, espresso brown
+                        'kultura-light-brown': '#B5876B', // Natural wood/pili tone
+                        // BACKGROUNDS & TEXT
+                        'kultura-bg': '#FFFFFF', // Clean white background (dominant)
+                        'kultura-off-white': '#FDFCFB', // Subtle contrast for section backgrounds
+                        'kultura-gray': '#555555', // Primary body text color
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scroll behavior for smooth navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* High-impact title styling */
+        .kultura-title {
+            letter-spacing: 0.15em; /* Wide letter spacing for elegance */
+            font-weight: 300; /* Light font weight */
+        }
+        /* Subtle transition for product cards */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        /* Hero banner style - large and full-width */
+        .hero-banner {
+            background-color: #4C3322; /* Fallback brown */
+            /* Updated Background Image: Peñafrancia Festival Procession */
+            background-image: url('https://catholicshrinebasilica.com/wp-content/uploads/IMG-20230921-WA0009-810x538-1.webp');
+            background-size: cover;
+            background-position: center;
+            /* Added sophistication: Fixed background for subtle parallax effect */
+            background-attachment: fixed; 
+        }
+    </style>
+</head>
+<body class="font-sans bg-kultura-bg text-kultura-gray">
+
+    <!-- Header & Navigation (Fixed, Clean, and Subtly Branded) -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Centered, Wide-Tracking Logo/Title - UPDATED WITH EXACT USER URL -->
+            <a href="#" class="flex items-center text-3xl font-light text-kultura-brown kultura-title uppercase">
+                <img 
+                    src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/476209270_1117863466796483_2935386429229578884_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=PQkT8tgk7SUQ7kNvwHnaXLe&_nc_oc=Adnd0sXcIIfM_xKmoF8fcnWkIUdf3YCIK2wOfdcN7XGeQGIQEqD-jBngw8zS-m7Xzmo&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=wJYIKi-ovtc2eQ4wWzX9vQ&oh=00_Afko9a6_rmpRralfYkQ4LQvNEfQ_GCqGWhD8U6WHd0lR-Q&oe=693DF20D" 
+                    alt="Pili & Sili Logo"
+                    class="h-8 w-12 mr-3 rounded-md object-contain"
+                    onerror="this.onerror=null;this.src='https://placehold.co/48x32/A82A2A/FFFFFF?text=PS';"
+                >
+                Pili & Sili Souvenirs Unlimited
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium kultura-title">
+                <a href="#categories" class="text-gray-600 hover:text-kultura-red transition duration-300">SHOP BY CATEGORY</a>
+                <a href="#products" class="text-gray-600 hover:text-kultura-red transition duration-300">NEW ARRIVALS</a>
+                <a href="#story" class="text-gray-600 hover:text-kultura-red transition duration-300">OUR STORY</a>
+                <a href="#contact" class="text-gray-600 hover:text-kultura-red transition duration-300">VISIT US</a>
+            </nav>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4 border-t border-gray-100">
+            <nav class="flex flex-col space-y-2 text-base font-medium">
+                <a href="#categories" class="block py-2 text-gray-600 hover:text-kultura-red">Shop by Category</a>
+                <a href="#products" class="block py-2 text-gray-600 hover:text-kultura-red">New Arrivals</a>
+                <a href="#story" class="block py-2 text-gray-600 hover:text-kultura-red">Our Story</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-kultura-red">Visit Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- 1. Hero Section (Dramatic Full-Width Banner with Peñafrancia Procession) -->
+        <section id="home" class="hero-banner h-[50vh] md:h-[70vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8 relative">
+            <!-- The sophisticated overlay has been removed to achieve 100% image visibility. -->
+
+            <div class="relative z-10 bg-white/90 p-8 md:p-12 rounded-lg max-w-4xl backdrop-blur-sm border border-kultura-light-brown/50 shadow-2xl">
+                <h1 class="text-5xl sm:text-7xl font-extrabold text-kultura-brown mb-4 kultura-title tracking-wider">
+                    The Pilgrimage to Bicol
+                </h1>
+                <p class="text-lg md:text-xl text-kultura-gray mb-8 max-w-2xl mx-auto font-medium">
+                    Celebrating the Peñafrancia Festival and the rich heritage of Naga City, Camarines Sur.
+                </p>
+                <a href="#products" class="inline-block px-12 py-3 bg-kultura-red text-white font-medium kultura-title text-base rounded-full shadow-lg hover:bg-kultura-brown transition duration-300 transform hover:scale-[1.05] ease-out">
+                    DISCOVER SOUVENIRS
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Shop by Category Section (Gallery Concept) -->
+        <section id="categories" class="py-24 px-4 sm:px-6 lg:px-8 bg-kultura-off-white">
+            <div class="max-w-7xl mx-auto">
+                 <h2 class="text-3xl font-light text-gray-900 mb-12 text-center kultura-title">
+                    SHOP BY CATEGORY
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Category 1: Fashion & Accessories (Woven bags) -->
+                    <a href="#" class="block group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+                        <img 
+                            src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/558859885_24870498725921264_5821903868850413251_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=8lZIyLE5T34Q7kNvwHGPcGs&_nc_oc=AdlOPPnLaDfW7pi0-Kged0HrN7osLXRbnowXqdN7ikA_jdHET1Xp4f62iewZWFxmyCk&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=c_dU0eviWIErpt8EcgemuQ&oh=00_AfnY9O0Kv7RJ53bZ-LNzMBkjGipdEYefdAj2OaQ8hUqw&oe=693DE243" 
+                            alt="Woven Bags and Accessories"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x450/B5876B/FFFFFF?text=FASHION+%26+ACCESSORIES';"
+                        >
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300 flex items-center justify-center">
+                            <span class="text-white text-2xl font-semibold kultura-title">FASHION & ACCESSORIES</span>
+                        </div>
+                    </a>
+
+                    <!-- Category 2: Home & Decor (Pili Carvings) -->
+                    <a href="#" class="block group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+                         <img 
+                            src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/559665581_24870498645921272_6940782914392328390_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=zs_KF-e7if8Q7kNvwFEwMv4&_nc_oc=AdkBl3zg09aQl3u6YlPytoCVpnsViJR5AC7CrBaBx-rLbMwTgcnSPHSXkHMbu9ir8uw&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=ZTQxH0ICPQ0Bob0hIpXqEg&oh=00_AfnzUTRtwgKUP7-JV6ePQmoINBmv7rR1gMmEu-tUK4bqIA&oe=693E06FF" 
+                            alt="Home and Decor"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x450/4C3322/FFFFFF?text=HOME+%26+DECOR';"
+                        >
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300 flex items-center justify-center">
+                            <span class="text-white text-2xl font-semibold kultura-title">HOME & DECOR</span>
+                        </div>
+                    </a>
+
+                    <!-- Category 3: Delicacies & Gifts (Sili Snacks) -->
+                    <a href="#" class="block group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+                         <img 
+                            src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/558185872_24870498892587914_4821669109979292666_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=eSarVEeeC-gQ7kNvwHEalvx&_nc_oc=AdlOvrB0micuqNRIFOUfsH30suO7rIG4eKnmLtQVHhiIz9nCEf4A7lkCIK4ei4oL-zk&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=d1DPUSSU6_UhOvSmBwjJ7Q&oh=00_AflrXUW9vYsNBhoci1NoTi7yJXk4JV95JHOU9TShdG8snA&oe=693DD5BE" 
+                            alt="Delicacies and Gifts"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x450/A82A2A/FFFFFF?text=DELICACIES+%26+GIFTS';"
+                        >
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300 flex items-center justify-center">
+                            <span class="text-white text-2xl font-semibold kultura-title">DELICACIES & GIFTS</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. New Arrivals/Featured Souvenirs Section (Clean Gallery Grid) -->
+        <section id="products" class="py-24 px-4 sm:px-6 lg:px-8 bg-kultura-bg">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-light text-gray-900 mb-12 text-center kultura-title">
+                    NEW ARRIVALS
+                </h2>
+                
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1: Handwoven Basket/Bag -->
+                    <div class="bg-white rounded-lg overflow-hidden product-card">
+                        <img 
+                            src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/558859885_24870498725921264_5821903868850413251_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=8lZIyLE5T34Q7kNvwHGPcGs&_nc_oc=AdlOPPnLaDfW7pi0-Kged0HrN7osLXRbnowXqdN7ikA_jdHET1Xp4f62iewZWFxmyCk&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=c_dU0eviWIErpt8EcgemuQ&oh=00_AfnY9O0Kv7RJ53bZ-LNzMBkjGipdEYefdAj2OaQ8hUqw&oe=693DE243" 
+                            alt="Abaca Handwoven Bag" 
+                            class="w-full h-80 object-cover object-center bg-gray-50"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/B5876B/FFFFFF?text=Abaca+Bag';"
+                        >
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-medium text-gray-900 mb-1">Abaca Weave Tote</h4>
+                            <p class="text-sm text-kultura-light-brown">₱ 1,850.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2: Sili Chili Charm Jewelry -->
+                    <div class="bg-white rounded-lg overflow-hidden product-card">
+                        <img 
+                            src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/558185872_24870498892587914_4821669109979292666_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=eSarVEeeC-gQ7kNvwHEalvx&_nc_oc=AdlOvrB0micuqNRIFOUfsH30suO7rIG4eKnmLtQVHhiIz9nCEf4A7lkCIK4ei4oL-zk&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=d1DPUSSU6_UhOvSmBwjJ7Q&oh=00_AflrXUW9vYsNBhoci1NoTi7yJXk4JV95JHOU9TShdG8snA&oe=693DD5BE" 
+                            alt="Sili Chili Charm Jewelry" 
+                            class="w-full h-80 object-cover object-center bg-gray-50"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/A82A2A/FFFFFF?text=Sili+Pendant';"
+                        >
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-medium text-gray-900 mb-1">Chili Pepper Pendant</h4>
+                            <p class="text-sm text-kultura-light-brown">₱ 450.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3: Pili Nut Keychains -->
+                    <div class="bg-white rounded-lg overflow-hidden product-card">
+                        <img 
+                            src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/559665581_24870498645921272_6940782914392328390_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=zs_KF-e7if8Q7kNvwFEwMv4&_nc_oc=AdkBl3zg09aQl3u6YlPytoCVpnsViJR5AC7CrBaBx-rLbMwTgcnSPHSXkHMbu9ir8uw&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=ZTQxH0ICPQ0Bob0hIpXqEg&oh=00_AfnzUTRtwgKUP7-JV6ePQmoINBmv7rR1gMmEu-tUK4bqIA&oe=693E06FF" 
+                            alt="Pili Nut Keychains and Charms" 
+                            class="w-full h-80 object-cover object-center bg-gray-50"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/4C3322/FFFFFF?text=Pili+Keyrings';"
+                        >
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-medium text-gray-900 mb-1">Polished Pili Keyring</h4>
+                            <p class="text-sm text-kultura-light-brown">₱ 280.00</p>
+                        </div>
+                    </div>
+                    
+                     <!-- Product Card 4: Sili Juice/Delicacy -->
+                    <div class="bg-white rounded-lg overflow-hidden product-card">
+                        <img 
+                            src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/559891573_24870498739254596_2487386342740455919_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=b8AvN865r40Q7kNvwFjzCV_&_nc_oc=AdmGL00hi81pHHdbaAiO60cKlnnVojV2XURxVzD8NMbvQjyx4hxIfLCNGKVE3UDF29s&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=qfwC-ppX-fjdklg7LYgIAg&oh=00_Afn9O25m4EpHZ18JmIh0e_uu-NWxpU-bgLAFw1BSf2x_A&oe=693DCF4F" 
+                            alt="Bicolano Sili Snack" 
+                            class="w-full h-80 object-cover object-center bg-gray-50"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/A82A2A/FFFFFF?text=Sili+Delicacy';"
+                        >
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-medium text-gray-900 mb-1">Spicy Pili Crisps</h4>
+                            <p class="text-sm text-kultura-light-brown">₱ 350.00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-16">
+                     <a href="#categories" class="inline-block px-12 py-3 text-sm bg-kultura-brown text-white font-medium kultura-title rounded-full shadow-lg hover:bg-kultura-red transition duration-300 transform hover:scale-[1.02]">
+                        VIEW ALL PRODUCTS
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. Our Story Section (Elegant Text Blocks) -->
+        <section id="story" class="py-24 px-4 sm:px-6 lg:px-8 bg-kultura-off-white">
+            <div class="max-w-6xl mx-auto">
+                 <h2 class="text-3xl font-light text-gray-900 mb-12 text-center kultura-title">
+                    OUR STORY
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- Text Block -->
+                    <div class="p-6">
+                        <h3 class="text-3xl font-light text-kultura-brown mb-6">
+                            Rooted in Tradition, Crafted for the Modern Home.
+                        </h3>
+                        <p class="text-lg leading-relaxed mb-6">
+                            Pili & Sili is more than a souvenir shop; it is a gateway to the soul of Bicol. We partner with local artisans who carry generations of craft knowledge, ensuring every piece—from the handwoven mat to the polished Pili charm—tells an authentic story of Filipino heritage.
+                        </p>
+                        <p class="text-lg leading-relaxed border-l-2 pl-4 border-kultura-light-brown italic text-gray-600">
+                            "Bringing the resilience of the Pili and the vibrant spirit of the Sili into your hands."
+                        </p>
+                    </div>
+                    <!-- Large Image/Motto -->
+                    <div class="bg-kultura-bg p-4 rounded-xl shadow-2xl overflow-hidden">
+                         <img 
+                            src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/465380746_8777397502324643_7775662035283445592_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=tSGg1P65XXoQ7kNvwHLtUWU&_nc_oc=Adn74TL6QmMpuhmt0gMJ8XVMyBZkbVTVh4-X8CMkw0WMb_e8k11EFBIi1cjqIfkPmA0&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=387R-3o1qTpNaF31lB_aaA&oh=00_AflJuehgbKrtRnsxMP5MY8YpE5bEcfy2jv1074xnXFPQqg&oe=693DF6AD"
+                            alt="Artisan at work"
+                            class="w-full h-auto object-cover rounded-lg"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x450/4C3322/FDFCFB?text=The+Artisan+Process';"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. Location & Contact Section (Minimalist Layout + New Inquiry Form) -->
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 bg-kultura-bg">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-light text-gray-900 mb-12 text-center kultura-title">
+                    VISIT OUR SHOWROOM & CONTACT US
+                </h2>
+                
+                <!-- 2-Column: Map and Contact Details -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                    <!-- Map View (Clickable link to Google Maps) -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Capitol+Dr,+Pili,+Philippines" target="_blank" class="block w-full h-96 rounded-lg overflow-hidden shadow-xl border border-gray-200 hover:opacity-95 transition duration-300 relative">
+                        <!-- Placeholder image that looks like a map -->
+                        <img 
+                            src="https://placehold.co/800x400/CCCCCC/4C3322?text=Click+to+View+Map+of+Pili+Showroom" 
+                            alt="Map location of Pili & Sili Showroom" 
+                            class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x400/CCCCCC/4C3322?text=Click+to+View+Map+of+Pili+Showroom';"
+                        >
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/10 transition duration-300">
+                            <p class="text-white text-xl font-bold p-3 rounded-full bg-kultura-red/80 hover:bg-kultura-red transition duration-300 shadow-lg">View Location on Map</p>
+                        </div>
+                    </a>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-6 flex flex-col justify-center">
+                        <div class="border-b pb-4 border-gray-100">
+                            <p class="text-sm kultura-title uppercase text-kultura-light-brown">Address</p>
+                            <!-- UPDATED ADDRESS TO PILI -->
+                            <p class="text-xl text-gray-700 mt-1">Capitol Dr, Pili, Camarines Sur, Philippines</p>
+                        </div>
+                        <div class="border-b pb-4 border-gray-100">
+                            <p class="text-sm kultura-title uppercase text-kultura-light-brown">Hours</p>
+                            <p class="text-xl text-gray-700 mt-1">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                        </div>
+                        <div class="border-b pb-4 border-gray-100">
+                            <p class="text-sm kultura-title uppercase text-kultura-light-brown">Contact</p>
+                            <p class="text-xl text-gray-700 mt-1">hello@piliandsili.com</p>
+                            <p class="text-xl text-gray-700">(09xx) xxx-xxxx</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW FULL-WIDTH SECTION: Inquiry Form -->
+                <div class="bg-kultura-off-white p-8 md:p-12 rounded-lg shadow-xl border border-gray-100">
+                    <h3 class="text-2xl font-light text-kultura-brown mb-6 text-center kultura-title">
+                        SEND US A MESSAGE FOR CUSTOM ORDERS & INQUIRIES
+                    </h3>
+                    <!-- Inquiry Form -->
+                    <form class="max-w-3xl mx-auto space-y-6">
+                        <!-- Name and Email -->
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Your Full Name" class="w-full p-3 border border-gray-300 rounded-md focus:ring-kultura-red focus:border-kultura-red transition" required>
+                            <input type="email" placeholder="Your Email Address" class="w-full p-3 border border-gray-300 rounded-md focus:ring-kultura-red focus:border-kultura-red transition" required>
+                        </div>
+                        <!-- Message Subject (Optional) -->
+                        <input type="text" placeholder="Subject (e.g., Custom Pili Carving Inquiry)" class="w-full p-3 border border-gray-300 rounded-md focus:ring-kultura-red focus:border-kultura-red transition">
+                        <!-- Message Textarea -->
+                        <textarea placeholder="Your Message or Custom Request details..." rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:ring-kultura-red focus:border-kultura-red transition" required></textarea>
+                        <!-- Submit Button -->
+                        <div class="text-center pt-4">
+                            <button type="submit" class="inline-block px-12 py-3 bg-kultura-red text-white font-medium kultura-title text-base rounded-full shadow-lg hover:bg-kultura-brown transition duration-300 transform hover:scale-[1.05] ease-out">
+                                SEND INQUIRY
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-xs text-center text-gray-500 mt-4">We will respond to your message within 24-48 hours.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Deep Brown, Minimalist) -->
+    <footer class="bg-kultura-brown text-white mt-20">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm kultura-title uppercase opacity-80">&copy; 2025 Pili & Sili Souvenirs Unlimited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (menuBtn && menu) {
+                menuBtn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+
+                // Close menu when a link is clicked
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Use a short delay to allow the navigation before collapsing the menu
+                        setTimeout(() => {
+                            menu.classList.add('hidden');
+                        }, 200);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
